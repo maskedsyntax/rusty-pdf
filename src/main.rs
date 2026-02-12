@@ -330,14 +330,14 @@ fn create_organize_tab(notebook: &Notebook, window: &Window) {
     let tab_label = gtk::Label::new(Some("Organize"));
     notebook.append_page(&box_container, Some(&tab_label));
 
-    let label = gtk::Label::new(Some("Delete Pages from PDF"));
+    let label = gtk::Label::new(Some("Delete Pages (comma-separated, e.g. 1, 3, 5)"));
     box_container.pack_start(&label, true, true, 0);
 
     let select_btn = Button::with_label("Select PDF");
     box_container.pack_start(&select_btn, false, false, 0);
 
     let pages_entry = Entry::new();
-    pages_entry.set_placeholder_text(Some("Enter page numbers to delete (e.g., 1, 3, 5)"));
+    pages_entry.set_placeholder_text(Some("1, 2, 3..."));
     box_container.pack_start(&pages_entry, false, false, 0);
 
     let action_btn = Button::with_label("Delete Pages");
